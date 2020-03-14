@@ -1,0 +1,21 @@
+import java.util.*;
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+        
+        //Scanner
+        Scanner s = new Scanner(System.in);
+        String str = s.next();                 // Reading input from STDIN
+        int count=0;
+        for(int i=0;i<=9;i++){
+            for(int j=0;j<=str.length()-1;j++){
+                if(Character.getNumericValue(str.charAt(j))==i){
+                    count++;
+                }
+            }
+            System.out.println(i+" "+count);
+            count=0;
+        }
+       
+    }
+}
