@@ -1,0 +1,27 @@
+import java.util.*;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		  Scanner s = new Scanner(System.in);
+	        int testcases= s.nextInt();
+	        long check=0; 
+	        List<Long> list=new ArrayList<>();
+
+	        for(int i=0;i<testcases;i++){
+	            long lowerRange = s.nextLong();
+	            long upperRange = s.nextLong();
+		        long input = s.nextLong();
+	            for(long j=1;j<upperRange;j++){
+	               check=input*j;
+	               if(lowerRange<=check && upperRange>=check){
+	            	   list.add(j);
+	               }
+	            }
+	           long min=list.stream().min(Comparator.comparing(Long::valueOf)).get();
+	           long max=list.stream().max(Comparator.comparing(Long::valueOf)).get();
+	           System.out.println(min+" "+max);
+	        }
+	        s.close();
+	}
+
