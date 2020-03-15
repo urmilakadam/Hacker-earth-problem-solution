@@ -1,0 +1,33 @@
+import java.util.*;
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+     
+        Scanner s = new Scanner(System.in);
+        String str=s.next();
+        int k=s.nextInt();
+        String newStr="";
+        String subStr=str.substring(0,k);
+        int res=0;
+        for (int i=0; i<subStr.length(); i++) 
+        { 
+            if (subStr.charAt(i) == '9') 
+            res++; 
+        } 
+        if(subStr.indexOf('9')>=0){
+            for(int i=0;i<k+res;i++){
+            newStr=newStr+"9";
+            }
+            str=newStr+str.substring(k+res);
+            System.out.println(str);
+        }else{
+            for(int i=0;i<k;i++){
+            newStr=newStr+"9";
+            }
+            str=newStr+str.substring(k);
+            System.out.println(str);
+        }
+            
+        
+    }
+}
