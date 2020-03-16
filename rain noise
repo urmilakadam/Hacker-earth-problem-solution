@@ -1,0 +1,27 @@
+
+import java.util.*;
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+
+        Scanner s = new Scanner(System.in);
+	        int testcases= s.nextInt();
+
+	        for(int i=0;i<testcases;i++){
+	            int lowerRange = s.nextInt();
+	            int upperRange = s.nextInt();
+		        int input = s.nextInt();
+                List<Integer> list=new ArrayList<>();
+	            for(int j=1;j<=upperRange;j++){
+	               if(lowerRange<=(input*j) && upperRange>=(input*j)){
+	            	   list.add(j);
+	               }
+	            }
+	            int min= list.stream().mapToInt(e->e).min().orElse(-1);
+	           int max=list.stream().mapToInt(e->e).max().orElse(-1);
+	           System.out.println(min+" "+max);
+	        }
+	        s.close();
+       
+    }
+}
