@@ -1,4 +1,4 @@
-
+//This solution is correct but takes time to execute as time complexity is more compared to next.
 import java.util.*;
 
 class TestClass {
@@ -25,3 +25,34 @@ class TestClass {
        
     }
 }
+
+
+//Below is the recommended solution.
+
+import java.util.*;
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+
+        Scanner sc = new Scanner(System.in);
+	        int testcases= sc.nextInt();
+
+	        for(int i=0;i<testcases;i++){
+	            int l = sc.nextInt();
+	            int r = sc.nextInt();
+		    int s = sc.nextInt();
+			l=(l-1)/s+1;
+	        	r=r/s;
+			if(l>r){
+				System.out.println("-1 -1");
+			}else{
+				System.out.println(l+" "+r);
+			}
+	    	}
+	     sc.close();
+    }
+}
+
+
+
+
