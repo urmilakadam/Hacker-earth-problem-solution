@@ -1,0 +1,27 @@
+import java.util.*;
+
+class TestClass {
+    public static void main(String args[] ) throws Exception {
+
+        Scanner s = new Scanner(System.in);
+        int t = s.nextInt();                 // Reading input from STDIN
+       
+       for(int k=0;k<t;k++){
+           int input=s.nextInt();
+           for(int i=0;i<input;i++){
+               for(int j=0;j<2*input;j++){
+                   if(i>=j){
+                       System.out.print("*");
+                   }else if(j>=2*input-i-1){
+                        System.out.print("*");
+                   }
+                   else {
+                       System.out.print("#");
+                   }
+               }
+               System.out.println();
+           }
+           System.out.println();
+       }
+    }
+}
